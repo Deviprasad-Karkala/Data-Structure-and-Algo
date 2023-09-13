@@ -17,6 +17,7 @@ int main()
     // Main Logic
     for (i = n - 1; i >= 1; i--)
     {
+        int didSwap=0;
         for (j = 0; j <= i - 1; j++)
         {
             if (a[j] > a[j + 1])
@@ -25,7 +26,11 @@ int main()
                 int temp = a[j];
                 a[j] = a[j+1];
                 a[j+1] = temp;
+                didSwap=1;
             }
+        }
+        if(didSwap==0){  //If array is already Sorted, we don't need to check for all rounds
+            break;
         }
     }
 
